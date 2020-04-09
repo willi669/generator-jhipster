@@ -253,6 +253,7 @@ repositories {
     mavenLocal()
     mavenCentral()
     jcenter()
+    maven { url 'https://repo.spring.io/milestone' } <%=/* FIXME: remove when Spring Boot 2.3 is released */%>
     <%_ if (reactive && (applicationType === 'gateway' || applicationType === 'monolith')) { _%>
     maven {
         url "https://oss.jfrog.org/artifactory/oss-snapshot-local/"

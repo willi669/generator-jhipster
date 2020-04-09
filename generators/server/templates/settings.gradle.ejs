@@ -18,6 +18,11 @@
 -%>
 
 pluginManagement {
+     <%=/* FIXME: remove when Spring Boot 2.3 is released */%>
+     repositories {
+          maven { url 'https://repo.spring.io/milestone' }
+          gradlePluginPortal()
+     }
      plugins {
           id 'org.springframework.boot' version "${spring_boot_version}"
           id 'com.google.cloud.tools.jib' version "${jib_plugin_version}"
