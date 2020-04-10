@@ -138,6 +138,7 @@
         <log4j2-mock.version>0.0.2</log4j2-mock.version>
 <%_ } _%>
         <mapstruct.version>1.3.1.Final</mapstruct.version>
+        <spring.cloud.service.connector.version>2.0.7.RELEASE</spring.cloud.service.connector.version>
 <%_ if (enableSwaggerCodegen) { _%>
         <jackson-databind-nullable.version><%= JACKSON_DATABIND_NULLABLE_VERSION %></jackson-databind-nullable.version>
 <%_ } _%>
@@ -897,8 +898,9 @@
         </dependency>
 <%_ } _%>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cloud-connectors</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-spring-service-connector</artifactId>
+            <version>${spring.cloud.service.connector.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
