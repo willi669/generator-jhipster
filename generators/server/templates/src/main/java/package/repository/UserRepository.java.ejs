@@ -49,9 +49,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
     <%_ } else { _%>
 import org.springframework.data.r2dbc.core.DatabaseClient;
 import org.springframework.data.r2dbc.core.ReactiveDataAccessStrategy;
-import org.springframework.data.r2dbc.query.Criteria;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;
+import org.springframework.data.relational.core.query.Criteria;
     <%_ } _%>
 <%_ } _%>
 <%_ if (databaseType === 'mongodb') { _%>
@@ -170,7 +170,7 @@ public interface UserRepository extends <% if (databaseType === 'sql') { %>JpaRe
     <%_ if (databaseType === 'neo4j') { _%>
     <% if (!reactive) { %>// See https://github.com/neo4j/sdn-rx/issues/51<% } %>
     <% if (reactive) { %>Flux<% } else { %>List<% } %><<%= asEntity('User') %>> findAll();
-    
+
     <%_ } _%>
     <%_ if (databaseType === 'sql') { _%>
     @EntityGraph(attributePaths = "authorities")
